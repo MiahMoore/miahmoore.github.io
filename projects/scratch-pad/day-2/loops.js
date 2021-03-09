@@ -125,6 +125,18 @@ function printObjectValuesInReverse(object) {
   // YOUR CODE ABOVE HERE //
 }
 
+/* OR
+
+ function printObjectValuesInReverse(object) {
+  // YOUR CODE BELOW HERE //
+  let y = Object.values(object);
+    for(let i = y.length -1; i > -1 ; i--) {
+      console.log(y[i]); }
+  // YOUR CODE ABOVE HERE //
+}
+
+*/
+
 
 
 

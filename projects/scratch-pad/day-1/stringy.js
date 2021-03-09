@@ -188,10 +188,10 @@ function sortAscending(stringOne, stringTwo) {
      return 0;
    }
     else if(x > y) {
-     return -1;
+     return 1;
    }
    else if (x < y) {
-     return 1;
+     return -1;
    }
 
     // YOUR CODE ABOVE HERE //
@@ -213,10 +213,10 @@ function sortDescending(stringOne, stringTwo) {
      return 0;
    }
     else if(x > y) {
-     return 1;
+     return -1;
    }
    else if (x < y) {
-     return -1;
+     return 1;
    }
 
 

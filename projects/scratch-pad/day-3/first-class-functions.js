@@ -13,10 +13,15 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+ 
+   return function (given) {
+        if(given > base) {
+            return true;
+        }
+        else {
+            return false;
+        }
+   };
     // YOUR CODE ABOVE HERE //
 }
 
@@ -25,14 +30,21 @@ function createGreaterThanFilter(base) {
  * return a Function that tests whether a given value is less than the 
  * base.
  */
+ 
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+    return function (given) {
+        if(given < base) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
     
     
     // YOUR CODE ABOVE HERE //
-}
+} 
 
 /** 
  * Given a startsWith character, which will be a single character, return a 
@@ -41,7 +53,15 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+     return function (string) {
+        if(startsWith.toLowerCase() === string[0].toLowerCase()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+     
+    };
     
     
     
@@ -56,7 +76,15 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    
+     return function (string) {
+        if(endsWith.toLowerCase() === string[string.length - 1].toLowerCase()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+     
+    };
     
     
     // YOUR CODE ABOVE HERE //
@@ -71,16 +99,27 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+   // declare an arr set to array that will be returned 
+    var arr = [];
     
+    //loop through the array to get access to each value in the array
+    for (var i = 0; i < strings.length; i++) {
+    // pass each string in the array through the modify function set to a variable modifiedStr
+       var modifiedStr = modify(strings[i]);
+       arr.push(modifiedStr);
+    }
+    //call the modify function on each value in the array and put the new value into the arr array
     
-    
+    //return arr
+     return arr;
     
     // YOUR CODE ABOVE HERE //
 }
 
 /** 
  * Given an Array of Strings and a Function designed to test the String in some 
- * way and return a Boolean on whether it passed, return true if ALL Strings pass the test.
+ * way and return a Boolean on whether it passed, 
+ * return true if ALL Strings pass the test.
  * 
  * Imagine you had a list of names, and you wanted to test they all 
  * begin with "C", or they are all exclaimations that end with "!".
@@ -90,8 +129,15 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
+    // create a for loop to loop through the strings in the strings array
+    for(var i = 0; i < strings.length; i++) {
+     // test each string to see if it passes or not 
+        if(test(strings[i]) === false) {
+            return false;
+        }
+    }
     
-    
+    return true; 
     
     // YOUR CODE ABOVE HERE //
 }
